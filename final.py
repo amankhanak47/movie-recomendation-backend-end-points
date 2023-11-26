@@ -1,10 +1,10 @@
+from pymongo import MongoClient
 import pandas as pd
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import sys
-from pymongo import MongoClient
 
 def clean_title(title):
     title = re.sub("[^a-zA-Z0-9 ]", "", title)
