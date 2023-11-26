@@ -15,7 +15,7 @@ app.post('/recommend', async (req, res) => {
   pythonProcess.stdout.on('data', (data) => {
     output += data.toString();
   });
-
+console.log(output)
   pythonProcess.on('close', (code) => {
     if (code === 0) {
       res.json({ recommendations: JSON.parse(output) });
