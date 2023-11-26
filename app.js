@@ -5,12 +5,12 @@ var cors = require("cors");
 app.use(express.json());
 app.use(cors())
 app.get("/", (req, res) => {
-  res.send("movie recomendation");
+  res.send("movie recomendation 1");
 });
 app.post('/recommend', async (req, res) => {
   console.log("got api call", req.body.movie)
   const pythonProcess = spawn('python', ['final.py', req.body.movie]);
-
+  console.log(pythonProcess)
   let output = '';
   pythonProcess.stdout.on('data', (data) => {
     output += data.toString();
